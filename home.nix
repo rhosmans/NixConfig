@@ -40,7 +40,11 @@
             enableCompletion = true;
             enableAutosuggestions = true;
             enableSyntaxHighlighting = true;
-            histSize = 1000;
+            history = {
+                size = 10000;
+                save = 10000;
+                ignoreDups = true;
+            };
             ohMyZsh = {
                 enable = true;
                 theme = "crunch";
