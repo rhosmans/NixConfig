@@ -24,7 +24,6 @@
         	pkgs.firefox			    #InternetBrowser
         	pkgs.rofi-wayland 		#AppLauncher
         	pkgs.wl-clipboard		#ClipboardFunctionality
-        	pkgs.hyprland		    #TilingWindowManager
         	pkgs.yazi			    #TerminalFileManager
         	pkgs.xfce.tumbler		#FileManagerThumbnails
         	pkgs.ffmpegthumbnailer	#VideoThumbnails
@@ -36,11 +35,6 @@
     ];
 
     programs = {
-        hyprland = {
-            enable = true;
-            xwayland.enable = true;
-        };
-        alacritty.enable = true;
         zsh = {
             enable = true;
             enableCompletion = true;
@@ -67,5 +61,16 @@
                 ];
             };
         };
+        alacritty = {
+            enable = true;	
+            settings ={
+                font.size = 12;
+                shell.program = "/usr/local/bin/zsh";
+            };	
+        };
+        neovim.enable = true;
+        xfconf.enable = true;
+        thunar.enable = true;
+        firefox.enable = true;
     };
 }

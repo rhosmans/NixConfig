@@ -94,122 +94,55 @@
   
 
   environment.systemPackages = with pkgs; [
-	git
-	vim
-# 	pipewire
-# 	meson
-# 	ninja
-# 	dunst
-# 	libnotify
-#   wget
-# 	git
-# 	htop
-# 	obsidian
-# 	zsh			#FuckBash
-# 	oh-my-zsh		#ifykyk
-# 	alacritty		#Terminal
-# 	neovim 			#TextEditor
-# 	vscode			#WorkShenanigans
-# 	firefox			#InternetBrowser
-# 	rofi-wayland 		#AppLauncher
-# 	wl-clipboard		#ClipboardFunctionality
-# 	hyprland		#TilingWindowManager
-# 	yazi			#TerminalFileManager
-# 	xfce.tumbler		#FileManagerThumbnails
-# 	ffmpegthumbnailer	#VideoThumbnails
-# 	gvfs			#TrashSupport
-# 	ladybird		#Browser
-# 	swww			#WallpaperDaemon
-# #	hyprpanel		#Statusbar
-# #	thunar			#GUIFileManager		
+    git
+    vim
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
   ];
 
-#   environment.sessionVariables.NIXOS_OZONE_WL = 1;
+  environment.sessionVariables.NIXOS_OZONE_WL = 1;
 
-#   services = {
-# 	flatpak.enable = true;
-#   };
-
-#   xdg.portal = {
-# 	enable = true;
-# 	config.common.default = "*";
-# 	extraPortals = [pkgs.xdg-desktop-portal-gtk];
-#   };	
 
   # Some programs need SUID wrappers, can be configured further or are
-#  programs = {
-#    hyprland = {
-#    	enable = true;
-#    	xwayland.enable = true;
-#    };
-#    zsh = {
-# 	enable = true;
-# 	enableCompletion = true;
-# 	enableBashCompletion = true;
-# 	autosuggestions.enable = true;
-# 	syntaxHighlighting.enable = true;
-# 	histSize = 1000;
-# 	ohMyZsh = {
-# 		enable = true;
-# 		theme = "crunch";
-# 		plugins = [
-# 			"kubectl"
-# 			"git"
-# 			"helm"
-# 			"docker"
-# 			"git"
-# 			"sudo"
-# 			"cp"
-# 			"dotenv"
-# 			"gcloud"
-# 			"golang"
-# 			"postgres"
-# 			"yarn"
-# 		];
-# 	};
-#    };
-# #    vscode = {
-# #	enable = true;
-# #	extensions = with pkgs.vscode-extensions; [];
-# #    };
-# #   alacritty = {
-# #	enable = true;	
-# #	settings ={
-# #		font.size = 12;
-# #		shell.program = "/usr/local/bin/zsh";
-# #	};	
-# #   };
-# #   ladybird.enable = true;
-#    neovim.enable = true;
-#    xfconf.enable = true;
-#    thunar.enable = true;
-#    firefox.enable = true;
-# };
+  programs.hyprland = {
+   	enable = true;
+   	xwayland.enable = true;
+   };
    
-   users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.zsh;
      
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+        pkgs.xdg-desktop-portal-hyprland
+        pkgs.xdg-desktop-portal-gtk
+      ];
+    config.common.default = "hyprland";
+  };	
 
 #   # List services that you want to enable:
-#   security = {
-# 	rtkit.enable = true;
-#   };
-#   services = {
-# 	pipewire = {
-# 		enable = true;
-# 		alsa.enable = true;
-# 		alsa.support32Bit = true;
-# 		pulse.enable = true;
-# 		jack.enable = true;
-# 	};
-# 	gnome = {
-# 		gnome-keyring.enable = true;
-# 	};
-#   };
-#   services.gvfs.enable = true;
-#   services.tumbler.enable = true;
+  security = {
+	  rtkit.enable = true;
+  };
+  services = {
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
+    gnome = {
+      gnome-keyring.enable = true;
+	  };
+    gvfs.enable = true;
+    tumbler.enable = true;
+    openssh.enable = true;
+    flatpak.enable = true;
+  };
 
-  # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
+
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
