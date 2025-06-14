@@ -12,16 +12,14 @@
         	pkgs.dunst
         	pkgs.libnotify
             pkgs.wget
-        	pkgs.git
         	pkgs.htop
             pkgs.zoxide
-        	pkgs.obsidian            #Notes
-        	pkgs.zsh	        		#FuckBash
+        	pkgs.obsidian           #Notes
+        	pkgs.zsh	        	#FuckBash
         	pkgs.oh-my-zsh	    	#ifykyk
         	pkgs.alacritty		    #Terminal
-        	pkgs.neovim 			    #TextEditor
-        	pkgs.vscode			    #WorkShenanigans
-        	pkgs.firefox			    #InternetBrowser
+            pkgs.vscode			    #WorkShenanigans
+        	pkgs.firefox			#InternetBrowser
         	pkgs.rofi-wayland 		#AppLauncher
         	pkgs.wl-clipboard		#ClipboardFunctionality
         	pkgs.yazi			    #TerminalFileManager
