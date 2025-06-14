@@ -45,7 +45,7 @@
                 save = 10000;
                 ignoreDups = true;
             };
-            ohMyZsh = {
+            oh-my-zsh = {
                 enable = true;
                 theme = "crunch";
                 plugins = [
