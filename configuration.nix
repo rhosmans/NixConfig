@@ -95,7 +95,7 @@
 
   environment.systemPackages = with pkgs; [
     git
-    vim
+    neovim
     xdg-desktop-portal
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
