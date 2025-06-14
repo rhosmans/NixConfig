@@ -38,7 +38,6 @@
         zsh = {
             enable = true;
             enableCompletion = true;
-            enableBashCompletion = true;
             enableAutosuggestions = true;
             enableSyntaxHighlighting = true;
             histSize = 1000;
