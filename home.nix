@@ -29,9 +29,9 @@
         	pkgs.ffmpegthumbnailer	#VideoThumbnails
         	pkgs.gvfs			    #TrashSupport
         	pkgs.swww			    #WallpaperDaemon
-        #   ladybird		    #Browser
-        #	hyprpanel		    #Statusbar
-        #	thunar			    #GUIFileManager	
+        	thunar	    		    #GUIFileManager	
+        #   ladybird	    	    #Browser
+        #	hyprpanel		        #Statusbar
     ];
 
     programs = {
