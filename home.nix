@@ -29,7 +29,7 @@
         	pkgs.ffmpegthumbnailer	#VideoThumbnails
         	pkgs.gvfs			    #TrashSupport
         	pkgs.swww			    #WallpaperDaemon
-        	thunar	    		    #GUIFileManager	
+        	pkgs.thunar	    		    #GUIFileManager	
         #   ladybird	    	    #Browser
         #	hyprpanel		        #Statusbar
     ];
