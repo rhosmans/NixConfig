@@ -44,7 +44,7 @@
 
 
   networking = {
-	hostName = "_highpointe";
+	hostName = "highpointe";
 	networkmanager.enable = true;
 	nameservers = [
 		"1.1.1.1"

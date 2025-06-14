@@ -15,7 +15,7 @@
     };
 
     outputs = { self, nixpkgs, home-manager, hyprpanel, ... }@inputs: {
-        nixosConfigurations._highpointe = nixpkgs.lib.nixosSystem {
+        nixosConfigurations.highpointe = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
 
             modules = [
