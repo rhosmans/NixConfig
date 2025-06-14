@@ -70,7 +70,6 @@
         };
         neovim.enable = true;
         xfconf.enable = true;
-        thunar.enable = true;
         firefox.enable = true;
     };
 }
