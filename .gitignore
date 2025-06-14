@@ -1,0 +1,6 @@
+# gitignore for nixOS config
+
+/secretes,nix
+/secretes.json
+/secrets.env
+/*.swp

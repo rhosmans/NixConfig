@@ -1,0 +1,38 @@
+{
+  description = "NixOS config";
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
+    hyprpanel = {
+	url = "github:Jas-SinghFSU/HyprPanel";
+	inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
+  outputs = { self, nixpkgs, ... }@inputs:
+     let
+	pkgs = import nixpkgs {
+		system = "x86_64-linux";
+		overlays = [ inputs.hyprpanel.overlay ];
+		config = { 
+			allowUnfree = true;
+		};
+	};
+     in 
+     {
+	nixosConfigurations = {
+		nixos = nixpkgs.lib.nixosSystem {
+			specialArgs = {
+				inherit inputs pkgs;
+			};
+			modules = [
+				./configuration.nix
+				 {
+					 nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
+					_module.args = { inherit inputs; };
+				 }
+			];
+		};
+	};
+     };
+}

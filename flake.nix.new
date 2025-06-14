@@ -1,0 +1,30 @@
+{
+  description = "A very basic flake";
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    hyuprpanel = {
+	url = "github:Jas-SinghFSU/HyprPanel";
+	inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
+  outputs = { self, nixpkgs, ... }@inputs:
+     let
+	overlays = [ inputs.hyprpanel.overlay ];
+	
+     in 
+     {
+	nixosConfigurations = {
+		nixos = nixpkgs.lib.nixosSystem {
+			specialArgs = {
+				inherit inputs;
+			};
+			modules = [
+				./configuration.nix
+				{ nixpkgs.overlays = [ overlays ]; }
+			];
+		};
+	};
+     };
+}
