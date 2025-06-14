@@ -15,23 +15,21 @@
     };
 
     outputs = { self, nixpkgs, home-manager, hyprpanel, ... }@inputs: {
-        nixosConfigurations.r-frame = {
-            nixpkgs.lib.nixosSystem {
-                system = "x86_65-linus";
+        nixosConfigurations._highpointe = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
 
-                modules = [
-                    ./configuration.nix
-                    home-manager.nixosMOdules.home-manager
-                    {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
+            modules = [
+                ./configuration.nix
+                home-manager.nixosMOdules.home-manager
+                {
+                    home-manager.useGlobalPkgs = true;
+                    home-manager.useUserPackages = true;
 
-                        home-manager.users._reave = import ./home.nix;
+                    home-manager.users._reave = import ./home.nix;
 
-                        nixpkgs.overlays = [ hyprpanel.overlay ];
-                    }
-                ];
-            };
+                    nixpkgs.overlays = [ hyprpanel.overlay ];
+                }
+            ];
         };
     };  
 }
