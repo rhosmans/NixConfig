@@ -6,30 +6,30 @@
     home.stateVersion = "25.05";
 
     home.packages = [
-        	pipewire
-        	meson
-        	ninja
-        	dunst
-        	libnotify
-            wget
-        	git
-        	htop
-            zoxide
-        	obsidian            #Notes
-        	zsh	        		#FuckBash
-        	oh-my-zsh	    	#ifykyk
-        	alacritty		    #Terminal
-        	neovim 			    #TextEditor
-        	vscode			    #WorkShenanigans
-        	firefox			    #InternetBrowser
-        	rofi-wayland 		#AppLauncher
-        	wl-clipboard		#ClipboardFunctionality
-        	hyprland		    #TilingWindowManager
-        	yazi			    #TerminalFileManager
-        	xfce.tumbler		#FileManagerThumbnails
-        	ffmpegthumbnailer	#VideoThumbnails
-        	gvfs			    #TrashSupport
-        	swww			    #WallpaperDaemon
+        	pkgs.pipewire
+        	pkgs.meson
+        	pkgs.ninja
+        	pkgs.dunst
+        	pkgs.libnotify
+            pkgs.wget
+        	pkgs.git
+        	pkgs.htop
+            pkgs.zoxide
+        	pkgs.obsidian            #Notes
+        	pkgs.zsh	        		#FuckBash
+        	pkgs.oh-my-zsh	    	#ifykyk
+        	pkgs.alacritty		    #Terminal
+        	pkgs.neovim 			    #TextEditor
+        	pkgs.vscode			    #WorkShenanigans
+        	pkgs.firefox			    #InternetBrowser
+        	pkgs.rofi-wayland 		#AppLauncher
+        	pkgs.wl-clipboard		#ClipboardFunctionality
+        	pkgs.hyprland		    #TilingWindowManager
+        	pkgs.yazi			    #TerminalFileManager
+        	pkgs.xfce.tumbler		#FileManagerThumbnails
+        	pkgs.ffmpegthumbnailer	#VideoThumbnails
+        	pkgs.gvfs			    #TrashSupport
+        	pkgs.swww			    #WallpaperDaemon
         #   ladybird		    #Browser
         #	hyprpanel		    #Statusbar
         #	thunar			    #GUIFileManager	
