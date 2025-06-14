@@ -39,8 +39,8 @@
             enable = true;
             enableCompletion = true;
             enableBashCompletion = true;
-            autosuggestions.enable = true;
-            syntaxHighlighting.enable = true;
+            enableAutosuggestions = true;
+            enableSyntaxHighlighting = true;
             histSize = 1000;
             ohMyZsh = {
                 enable = true;
