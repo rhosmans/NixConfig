@@ -69,7 +69,6 @@
             };	
         };
         neovim.enable = true;
-        xfconf.enable = true;
         firefox.enable = true;
     };
 }
