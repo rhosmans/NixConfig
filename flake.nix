@@ -20,7 +20,7 @@
 
             modules = [
                 ./configuration.nix
-                home-manager.nixosMOdules.home-manager
+                home-manager.nixosModules.home-manager
                 {
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;
