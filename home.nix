@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 {
     home.username = "reave";
-    home.sessionPath = [ "$HOME/.nix-profile/bin" ];
-
     home.stateVersion = "25.05";
 
     home.packages = [
