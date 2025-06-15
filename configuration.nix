@@ -17,6 +17,7 @@
 		warn-dirty= false;
 		experimental-features= "nix-command flakes";
 		auto-optimise-store = true;
+		download-buffer-size = 99999999;
 	};
   };
 
