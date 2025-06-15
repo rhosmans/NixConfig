@@ -33,14 +33,11 @@
 
   # Bootloader.
   boot = {
-	tmp.cleanOnBoot = true;
 	supportedFilesystems = ["ntfs"];
 	loader = {
 		systemd-boot.enable = true;
 		efi.canTouchEfiVariables = true;
-		efi.efiSysMountPoint = "/boot/efi";
 		grub.efiSupport = true;
-		grub.device = "nodev";
 	};
   };
 
