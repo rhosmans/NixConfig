@@ -96,6 +96,8 @@
   environment.systemPackages = with pkgs; [
     git
     neovim
+    greetd
+    tuigreet
     xdg-desktop-portal
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
@@ -135,6 +137,15 @@
     gnome = {
       gnome-keyring.enable = true;
 	  };
+    greetd = {
+      enable = true;
+      settings ={
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd hyprland";
+          user = "reave";
+        };
+      };
+    };
     gvfs.enable = true;
     tumbler.enable = true;
     openssh.enable = true;
