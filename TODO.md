@@ -4,6 +4,7 @@
 [] Create SymLink from /NixConfig/hyprland to ~/.config/hypr/
 [] Setup OS-Keychain
 [] hyprpanel setup
+[] lazyVim setup
 
 ## Style
 
