@@ -80,12 +80,13 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users._reave = {
+  users.users.reave = {
     isNormalUser = true;
     description = "Me";
+    shell = pkgs.zsh;
+    home = "home/reave"
     extraGroups = [ "networkmanager" "wheel" "flatpak" "disk" "qemu" "audio" "video" "root" ];
     packages = with pkgs; [];
-    shell = pkgs.zsh;
   };
 
   # List packages installed in system profile. To search, run:
