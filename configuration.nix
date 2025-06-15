@@ -84,7 +84,7 @@
     isNormalUser = true;
     description = "Me";
     shell = pkgs.zsh;
-    home = "home/reave";
+    home = "/home/reave";
     extraGroups = [ "networkmanager" "wheel" "flatpak" "disk" "qemu" "audio" "video" "root" ];
     packages = with pkgs; [];
   };
