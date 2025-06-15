@@ -2,6 +2,7 @@
 {
     home.username = "_reave";
     home.homeDirectory = "/home/_reave";
+    home.sessionPath = [ "$HOME/.nix-profile/bin" ]:
 
     home.stateVersion = "25.05";
 
@@ -11,24 +12,23 @@
         	pkgs.ninja
         	pkgs.dunst
         	pkgs.libnotify
-            pkgs.wget
+		pkgs.wget
         	pkgs.htop
-            pkgs.zoxide
-        	pkgs.obsidian           #Notes
+		pkgs.zoxide
+        	pkgs.obsidian           	#Notes
         	pkgs.zsh	        	#FuckBash
-        	pkgs.oh-my-zsh	    	#ifykyk
-        	pkgs.alacritty		    #Terminal
-            pkgs.vscode			    #WorkShenanigans
+        	pkgs.oh-my-zsh	    		#ifykyk
+        	pkgs.alacritty		    	#Terminal
+		pkgs.vscode			#WorkShenanigans
         	pkgs.firefox			#InternetBrowser
         	pkgs.rofi-wayland 		#AppLauncher
         	pkgs.wl-clipboard		#ClipboardFunctionality
-        	pkgs.yazi			    #TerminalFileManager
+        	pkgs.yazi			#TerminalFileManager
         	pkgs.xfce.tumbler		#FileManagerThumbnails
-        	pkgs.ffmpegthumbnailer	#VideoThumbnails
-        	pkgs.gvfs			    #TrashSupport
-        	pkgs.swww			    #WallpaperDaemon
-        	pkgs.xfce.thunar        #GUIFileManager	
-        #   ladybird	    	    #Browser
+        	pkgs.ffmpegthumbnailer		#VideoThumbnails
+        	pkgs.gvfs			#TrashSupport
+        	pkgs.swww			#WallpaperDaemon
+        	pkgs.xfce.thunar        	#GUIFileManager	
         #	hyprpanel		        #Statusbar
     ];
 
