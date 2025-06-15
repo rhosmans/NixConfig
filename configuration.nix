@@ -101,8 +101,6 @@
     xdg-desktop-portal-hyprland
   ];
 
-  environment.sessionVariables.NIXOS_OZONE_WL = 1;
-
 
   # Some programs need SUID wrappers, can be configured further or are
   programs.hyprland = {
