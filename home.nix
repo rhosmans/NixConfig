@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
-    home.username = "_reave";
-    home.homeDirectory = "/home/_reave";
+    home.username = "reave";
+    home.homeDirectory = "/home/reave";
     home.sessionPath = [ "$HOME/.nix-profile/bin" ];
 
     home.stateVersion = "25.05";

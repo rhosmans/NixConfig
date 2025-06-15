@@ -25,7 +25,7 @@
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;
 
-                    home-manager.users._reave = import ./home.nix;
+                    home-manager.users.reave = import ./home.nix;
 
                     nixpkgs.overlays = [ hyprpanel.overlay ];
                 }
