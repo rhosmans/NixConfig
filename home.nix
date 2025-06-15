@@ -67,7 +67,7 @@
     };
 
     home.file."~/.config/hypr/hyprland.conf" = {
-        source = "./hyprland/hyprland.conf";
+        source = ./hyprland/hyprland.conf;
         force = true;
     };
 }
