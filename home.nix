@@ -65,4 +65,6 @@
         neovim.enable = true;
         firefox.enable = true;
     };
+
+    home.file.".config/hypr/hyprland.conf".source = ./hyprland/hyprland.conf;
 }
