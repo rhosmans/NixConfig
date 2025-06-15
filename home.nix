@@ -12,23 +12,23 @@
         	pkgs.ninja
         	pkgs.dunst
         	pkgs.libnotify
-		pkgs.wget
+		    pkgs.wget
         	pkgs.htop
-		pkgs.zoxide
-        	pkgs.obsidian           	#Notes
+		    pkgs.zoxide
+        	pkgs.obsidian           #Notes
         	pkgs.zsh	        	#FuckBash
-        	pkgs.oh-my-zsh	    		#ifykyk
-        	pkgs.alacritty		    	#Terminal
-		pkgs.vscode			#WorkShenanigans
+        	pkgs.oh-my-zsh	    	#ifykyk
+        	pkgs.alacritty		    #Terminal
+		    pkgs.vscode			    #WorkShenanigans
         	pkgs.firefox			#InternetBrowser
         	pkgs.rofi-wayland 		#AppLauncher
         	pkgs.wl-clipboard		#ClipboardFunctionality
-        	pkgs.yazi			#TerminalFileManager
+        	pkgs.yazi			    #TerminalFileManager
         	pkgs.xfce.tumbler		#FileManagerThumbnails
-        	pkgs.ffmpegthumbnailer		#VideoThumbnails
-        	pkgs.gvfs			#TrashSupport
-        	pkgs.swww			#WallpaperDaemon
-        	pkgs.xfce.thunar        	#GUIFileManager	
+        	pkgs.ffmpegthumbnailer	#VideoThumbnails
+        	pkgs.gvfs			    #TrashSupport
+        	pkgs.swww			    #WallpaperDaemon
+        	pkgs.xfce.thunar        #GUIFileManager	
         #	hyprpanel		        #Statusbar
     ];
 
@@ -61,13 +61,14 @@
                     "yarn"
                 ];
             };
+            initExtra = ''
+                if [-f "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"];
+                    then source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+                fi
+            '';
         };
         alacritty = {
             enable = true;	
-            settings ={
-                font.size = 12;
-                shell.program = "/usr/local/bin/zsh";
-            };	
         };
         neovim.enable = true;
         firefox.enable = true;
