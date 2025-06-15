@@ -66,5 +66,8 @@
         firefox.enable = true;
     };
 
-    home.file.".config/hypr/hyprland.conf".source = ./hyprland/hyprland.conf;
+    home.file."~/.config/hypr/hyprland.conf" = {
+        source = ./hyprland/hyprland.conf;
+        force = true;
+    };
 }
