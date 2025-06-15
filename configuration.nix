@@ -97,7 +97,6 @@
     git
     neovim
     greetd
-    tuigreet
     xdg-desktop-portal
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
