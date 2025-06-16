@@ -13,22 +13,22 @@
   documentation.nixos.enable = false;
 
   nix = {
-	settings = {
-		warn-dirty= false;
-		experimental-features= "nix-command flakes";
-		auto-optimise-store = true;
-		download-buffer-size = 99999999;
-	};
+    settings = {
+      warn-dirty= false;
+      experimental-features= "nix-command flakes";
+      auto-optimise-store = true;
+      download-buffer-size = 99999999;
+    };
   };
 
   nixpkgs = {
-	config = {
-		allowUnfree = true;
-		permittedInsecurePackages = [
-			"openssl-1.1.1v"
-			"python-2.17.18.7"
-		];
-	};
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "openssl-1.1.1v"
+        "python-2.17.18.7"
+      ];
+    };
   };
 
   # Bootloader.
@@ -41,17 +41,16 @@
     };
   };
 
-
   networking = {
-	hostName = "highpointe";
-	networkmanager.enable = true;
-	nameservers = [
-		"1.1.1.1"
-		"8.8.8.8"
-		"1.0.0.1"
-		"8.4.4.4"
-	];
-	networkmanager.wifi.powersave = true;
+    hostName = "highpointe";
+    networkmanager.enable = true;
+    nameservers = [
+      "1.1.1.1"
+      "8.8.8.8"
+      "1.0.0.1"
+      "8.4.4.4"
+    ];
+    networkmanager.wifi.powersave = true;
   };
 
   # Set your time zone.
@@ -94,54 +93,54 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   programs.hyprland = {
-   	enable = true;
-   	xwayland.enable = true;
-   };
-  programs.zsh.enable = true;
-     
-  xdg.portal = {
     enable = true;
-    extraPortals = [
-        pkgs.xdg-desktop-portal-hyprland
-        pkgs.xdg-desktop-portal-gtk
-      ];
-    config.common.default = "hyprland";
-  };	
+   	  xwayland.enable = true;
+    };
+    programs.zsh.enable = true;
+    xdg.portal = {
+      enable = true;
+      extraPortals = [
+          pkgs.xdg-desktop-portal-hyprland
+          pkgs.xdg-desktop-portal-gtk
+        ];
+      config.common.default = "hyprland";
+    };	
 
-#   # List services that you want to enable:
+    services = {
+      # Configure keymap in X11
+      xserver.xkb = {
+        layout = "us";
+        variant = "";
+      };
+      pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+        jack.enable = true;
+      };
+      gnome = {
+        gnome-keyring.enable = true;
+      };
+      greetd = {
+        enable = true;
+        settings ={
+          default_session = {
+            command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd hyprland";
+            user = "reave";
+          };
+        };
+      };
+      gvfs.enable = true;
+      tumbler.enable = true;
+      openssh.enable = true;
+      flatpak.enable = true;
+    };
+
+  # List services that you want to enable:
   security = {
 	  rtkit.enable = true;
     pam.services.greetd.enableGnomeKeyring = true;
-  };
-  services = {
-    # Configure keymap in X11
-    xserver.xkb = {
-      layout = "us";
-      variant = "";
-    };
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      jack.enable = true;
-    };
-    gnome = {
-      gnome-keyring.enable = true;
-	  };
-    greetd = {
-      enable = true;
-      settings ={
-        default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd hyprland";
-          user = "reave";
-        };
-      };
-    };
-    gvfs.enable = true;
-    tumbler.enable = true;
-    openssh.enable = true;
-    flatpak.enable = true;
   };
 
   # This value determines the NixOS release from which the default
