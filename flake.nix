@@ -11,10 +11,13 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        
+        swww = {
+            url = "github:LGFae/swww";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
-    outputs = { self, nixpkgs, home-manager, hyprpanel, ... }@inputs: {
+    outputs = { self, nixpkgs, home-manager, hyprpanel, swww, ... }@inputs: {
         nixosConfigurations.highpointe = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
 
@@ -22,9 +25,11 @@
                 ./configuration.nix
                 home-manager.nixosModules.home-manager
                 {
+                    # home-manager settings
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;
 
+                    # home-manager user file
                     home-manager.users.reave = import ./home.nix;
 
                     nixpkgs.overlays = [ hyprpanel.overlay ];

@@ -4,6 +4,7 @@
     home.stateVersion = "25.05";
 
     home.packages = [
+
         	pkgs.pipewire
         	pkgs.meson
         	pkgs.ninja
@@ -26,7 +27,7 @@
         	pkgs.gvfs			    #TrashSupport
         	pkgs.swww			    #WallpaperDaemon
         	pkgs.xfce.thunar        #GUIFileManager	
-        #	hyprpanel		        #Statusbar
+            pkgs.hyprpanel		    #Statusbar
     ];
 
     programs = {
@@ -57,6 +58,32 @@
                     "postgres"
                     "yarn"
                 ];
+            };
+        };
+        hyprpanel = {
+            enable = true;
+            systemd.enable = true;
+            hyprland.enable = true;
+            layout = {
+                "bar.layouts" = {
+                    "0" = {
+                    left = [ "dashboard" "workspaces" ];
+                    middle = [ "media" ];
+                    right = [ "volume" "systray" "notifications" ];
+                    };
+                };
+            };
+            settings = {
+                bar.launcher.autoDetectIcon = true;
+                bar.workspaces.show_icons = true;
+                menus.clock = {
+                    time = {
+                        military = true;
+                        hideSeconds = true;
+                    };
+                    weather.unit = "metric";
+                };
+                theme.bar.transparent = true;
             };
         };
         alacritty = {
