@@ -33,12 +33,12 @@
 
   # Bootloader.
   boot = {
-	supportedFilesystems = ["ntfs"];
-	loader = {
-		systemd-boot.enable = true;
-		efi.canTouchEfiVariables = true;
-		grub.efiSupport = true;
-	};
+    supportedFilesystems = ["ntfs"];
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      grub.efiSupport = true;
+    };
   };
 
 
@@ -72,12 +72,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.reave = {
     isNormalUser = true;
@@ -90,9 +84,6 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-
-  
-
   environment.systemPackages = with pkgs; [
     git
     neovim
@@ -100,7 +91,6 @@
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
   ];
-
 
   # Some programs need SUID wrappers, can be configured further or are
   programs.hyprland = {
@@ -121,8 +111,14 @@
 #   # List services that you want to enable:
   security = {
 	  rtkit.enable = true;
+    pam.services.greetd.enableGnomeKeyring = true;
   };
   services = {
+    # Configure keymap in X11
+    xserver.xkb = {
+      layout = "us";
+      variant = "";
+    };
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -147,14 +143,6 @@
     openssh.enable = true;
     flatpak.enable = true;
   };
-
-
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
