@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 {
+    imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
+    
     home.username = "reave";
     home.stateVersion = "25.05";
 
