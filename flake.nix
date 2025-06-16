@@ -30,7 +30,10 @@
                     home-manager.useUserPackages = true;
 
                     # home-manager user file
-                    home-manager.users.reave = import ./home.nix;
+                    home-manager.users.reave = import ./home.nix {
+                        inherit pkgs;
+                        inherit inputs;
+                    };
 
                     nixpkgs.overlays = [ hyprpanel.overlay ];
                 }
