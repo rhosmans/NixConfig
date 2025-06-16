@@ -70,4 +70,9 @@
         source = ./hyprland/hyprland.conf;
         force = true;
     };
+
+    # home.file."path/to/firefox-default/profile/chrome" = {
+    #   source = ./Firefox/;
+    #   force = true;     
+    # };
 }
