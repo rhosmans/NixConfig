@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
 {
-    imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
-    
     home.username = "reave";
     home.stateVersion = "25.05";
 
@@ -29,7 +27,6 @@
         	pkgs.gvfs			    #TrashSupport
         	pkgs.swww			    #WallpaperDaemon
         	pkgs.xfce.thunar        #GUIFileManager	
-            pkgs.hyprpanel		    #Statusbar
     ];
 
     programs = {
@@ -65,16 +62,16 @@
         hyprpanel = {
             enable = true;
             systemd.enable = true;
-            hyprland.enable = true;
-            layout = {
-                "bar.layouts" = {
-                    "0" = {
-                    left = [ "dashboard" "workspaces" ];
-                    middle = [ "media" ];
-                    right = [ "volume" "systray" "notifications" ];
-                    };
-                };
-            };
+            # hyprland.enable = true;
+            # layout = {
+            #     "bar.layouts" = {
+            #         "0" = {
+            #         left = [ "dashboard" "workspaces" ];
+            #         middle = [ "media" ];
+            #         right = [ "volume" "systray" "notifications" ];
+            #         };
+            #     };
+            # };
             settings = {
                 bar.launcher.autoDetectIcon = true;
                 bar.workspaces.show_icons = true;
