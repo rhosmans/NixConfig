@@ -53,6 +53,10 @@
     networkmanager.wifi.powersave = true;
   };
 
+  hardware = {
+    bluetooth.enable = true;
+  };
+
   # Set your time zone.
   time.timeZone = "America/Denver";
 
@@ -84,11 +88,27 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    git
-    neovim
+    #hyprpanel deps
+    aylurs-gtk-shell-git
+    wireplumber
+    libgtop
+    bluez
+    bluez-utils
+    networkmanager
+    dart-sass
+    wl-clipboard
+    upower
+    gvfs
+    gtksourceview3
+    libsoup3
+    #hyprland deps
     xdg-desktop-portal
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
+    #other
+    git
+    neovim
+    nm-applet
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -131,6 +151,7 @@
           };
         };
       };
+      blueman.enable = true;
       gvfs.enable = true;
       tumbler.enable = true;
       openssh.enable = true;

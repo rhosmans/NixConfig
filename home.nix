@@ -4,7 +4,6 @@
     home.stateVersion = "25.05";
 
     home.packages = [
-
         	pkgs.pipewire
         	pkgs.meson
         	pkgs.ninja
@@ -20,13 +19,13 @@
 		    pkgs.vscode			    #WorkShenanigans
         	pkgs.firefox			#InternetBrowser
         	pkgs.rofi-wayland 		#AppLauncher
-        	pkgs.wl-clipboard		#ClipboardFunctionality
         	pkgs.yazi			    #TerminalFileManager
         	pkgs.xfce.tumbler		#FileManagerThumbnails
         	pkgs.ffmpegthumbnailer	#VideoThumbnails
-        	pkgs.gvfs			    #TrashSupport
         	pkgs.swww			    #WallpaperDaemon
         	pkgs.xfce.thunar        #GUIFileManager	
+            # hyperpanel deps
+            gnome.adwaita-icon-theme
     ];
 
     programs = {
@@ -62,6 +61,7 @@
         hyprpanel = {
             enable = true;
             systemd.enable = true;
+            overwrite.enable = true;
             # hyprland.enable = true;
             # layout = {
             #     "bar.layouts" = {
