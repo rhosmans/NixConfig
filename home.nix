@@ -107,7 +107,7 @@
         firefox.enable = true;
     };
 
-    home.file."~/.config/hypr/hyprland.conf" = {
+    home.file."/home/reave/.config/hypr/hyprland.conf" = {
         source = ./hyprland/hyprland.conf;
         force = true;
     };
