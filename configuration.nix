@@ -89,14 +89,13 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     #hyprpanel deps
-    aylurs-gtk-shell-git
+    ags
     wireplumber
     libgtop
     bluez
     bluez-utils
-    networkmanager
-    dart-sass
     wl-clipboard
+    cliphist
     upower
     gvfs
     gtksourceview3
