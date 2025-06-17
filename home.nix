@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, hyprpanelPkg, ... }:
 {
     home.username = "reave";
     home.stateVersion = "25.05";

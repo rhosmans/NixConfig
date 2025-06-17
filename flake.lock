@@ -119,6 +119,7 @@
       },
       "original": {
         "owner": "Jas-SinghFSU",
+        "ref": "master",
         "repo": "HyprPanel",
         "type": "github"
       }

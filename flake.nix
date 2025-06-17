@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
+      url = "github:Jas-SinghFSU/HyprPanel/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
