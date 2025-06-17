@@ -95,12 +95,12 @@
                 selection.save_to_clipboard = true;
                 cursor.thickness = 0.08;
                 keyboard.bindings = [
-                    # { key = "", mods = "Command" | "Control" | "Option" | "Super" | "Shift" | "Alt", action = "" }
-                    { key = "C", mods = "Alt", action = "Copy" }
-                    { key = "V", mods = "Alt", action = "Paste" }
-                    { key = "-", mods = "Alt", action = "DecreaseFontSize" }
-                    { key = "=", mods = "Alt", action = "IncreaseFontSize" }
-                    { key = "K", mods = "Alt", action = "ClearHistory" }
+                    # { key = ""; mods = "Command" | "Control" | "Option" | "Super" | "Shift" | "Alt"; action = ""; }
+                    { key = "C"; mods = "Alt"; action = "Copy"; }
+                    { key = "V"; mods = "Alt"; action = "Paste"; }
+                    { key = "="; mods = "Alt"; action = "IncreaseFontSize"; }
+                    { key = "-"; mods = "Alt"; action = "DecreaseFontSize"; }
+                    { key = "K"; mods = "Alt"; action = "ClearHistory"; }
                 ];
             };
         };
