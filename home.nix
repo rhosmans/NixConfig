@@ -60,7 +60,7 @@
         };
         hyprpanel = {
             enable = true;
-            systemd.enable = true;
+            # hyprland.enable = true;
             # hyprland.enable = true;
             # layout = {
             #     "bar.layouts" = {
