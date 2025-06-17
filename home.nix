@@ -25,7 +25,7 @@
         	pkgs.swww			    #WallpaperDaemon
         	pkgs.xfce.thunar        #GUIFileManager	
             # hyperpanel deps
-            gnome.adwaita-icon-theme
+            pkgs.adwaita-icon-theme
     ];
 
     programs = {
