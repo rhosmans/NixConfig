@@ -93,13 +93,12 @@
     wireplumber
     libgtop
     bluez
-    bluez-utils
     wl-clipboard
     cliphist
     upower
     gvfs
     gtksourceview3
-    libsoup3
+    upower
     #hyprland deps
     xdg-desktop-portal
     xdg-desktop-portal-gtk
@@ -107,7 +106,8 @@
     #other
     git
     neovim
-    nm-applet
+    networkmanagerapplet
+    power-profiles-daemon
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -150,11 +150,15 @@
           };
         };
       };
+
       blueman.enable = true;
       gvfs.enable = true;
       tumbler.enable = true;
       openssh.enable = true;
       flatpak.enable = true;
+      upower.enable = true;
+      power-profiles-daemon.enable = true;
+      fwupd.enable = true; #framework laptop bios distribution: fwupdmgr update 
     };
 
   # List services that you want to enable:
