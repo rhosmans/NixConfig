@@ -61,7 +61,6 @@
         hyprpanel = {
             enable = true;
             systemd.enable = true;
-            overwrite.enable = true;
             # hyprland.enable = true;
             # layout = {
             #     "bar.layouts" = {
@@ -72,18 +71,18 @@
             #         };
             #     };
             # };
-            settings = {
-                bar.launcher.autoDetectIcon = true;
-                bar.workspaces.show_icons = true;
-                menus.clock = {
-                    time = {
-                        military = true;
-                        hideSeconds = true;
-                    };
-                    weather.unit = "metric";
-                };
-                theme.bar.transparent = true;
-            };
+            # settings = {
+            #     bar.launcher.autoDetectIcon = true;
+            #     bar.workspaces.show_icons = true;
+            #     menus.clock = {
+            #         time = {
+            #             military = true;
+            #             hideSeconds = true;
+            #         };
+            #         weather.unit = "metric";
+            #     };
+            #     theme.bar.transparent = true;
+            # };
         };
         alacritty = {
             enable = true;
@@ -103,7 +102,6 @@
                     { key = "V"; mods = "Alt"; action = "Paste"; }
                     { key = "="; mods = "Alt"; action = "IncreaseFontSize"; }
                     { key = "-"; mods = "Alt"; action = "DecreaseFontSize"; }
-                    { key = "k"; mods = "Alt"; command = "clear"; } # not working?
                 ];
             };
         };
