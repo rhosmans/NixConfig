@@ -103,7 +103,7 @@
                     { key = "V"; mods = "Alt"; action = "Paste"; }
                     { key = "="; mods = "Alt"; action = "IncreaseFontSize"; }
                     { key = "-"; mods = "Alt"; action = "DecreaseFontSize"; }
-                    { key = "k"; mods = "Alt"; command = "clear"; }
+                    { key = "k"; mods = "Alt"; command = "clear"; } # not working?
                 ];
             };
         };
