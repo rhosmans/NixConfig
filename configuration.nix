@@ -92,7 +92,7 @@
     ags
     wireplumber
     libgtop
-    bluez
+    bluez                             # bluetooth 
     wl-clipboard
     cliphist
     upower
@@ -108,6 +108,7 @@
     neovim
     networkmanagerapplet
     power-profiles-daemon
+    manix                             # documentation search for nix pkg options
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
