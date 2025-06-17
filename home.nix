@@ -93,14 +93,17 @@
                     blur = true;
                 };
                 selection.save_to_clipboard = true;
-                cursor.thickness = 0.08;
+                cursor.thickness = 0.20;
+                cursor.unfocused_hollow = false;
+                cursor.style.shape = "Beam";
+                cursor.style.blinking = "On";
                 keyboard.bindings = [
                     # { key = ""; mods = "Command" | "Control" | "Option" | "Super" | "Shift" | "Alt"; action = ""; }
                     { key = "C"; mods = "Alt"; action = "Copy"; }
                     { key = "V"; mods = "Alt"; action = "Paste"; }
                     { key = "="; mods = "Alt"; action = "IncreaseFontSize"; }
                     { key = "-"; mods = "Alt"; action = "DecreaseFontSize"; }
-                    { key = "K"; mods = "Alt"; action = "ClearHistory"; }
+                    { key = "k"; mods = "Alt"; command = "clear"; }
                 ];
             };
         };
