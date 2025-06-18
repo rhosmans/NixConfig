@@ -39,10 +39,7 @@
 
             home-manager.sharedModules = [
                 inputs.hyprpanel.homeManagerModules.hyprpanel
-            ];
-
-            home-manager.extraModules = [
-              zen-browser.homeManagerModules.default
+                inputs.zen-browser.homeModules.default
             ];
             
             home-manager.users.reave = import ./home.nix;
