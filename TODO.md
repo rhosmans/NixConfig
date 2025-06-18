@@ -5,7 +5,6 @@
 [] Android Studio
 [] Keymap to match macOS/swap alt and super on framework keyboard
 [] Figure out right click on trackpad instead of just two finger tap
-[] 
 
 ## Style
 
