@@ -15,9 +15,13 @@
       url = "github:LGFae/swww";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, hyprpanel, swww, ... }: let
+  outputs = inputs@{ self, nixpkgs, home-manager, hyprpanel, swww, zen-browser, ... }: let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
@@ -35,6 +39,10 @@
 
             home-manager.sharedModules = [
                 inputs.hyprpanel.homeManagerModules.hyprpanel
+            ];
+
+            home-manager.extraModules = [
+              zen-browser.homeManagerModules.default
             ];
             
             home-manager.users.reave = import ./home.nix;

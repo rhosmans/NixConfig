@@ -1,4 +1,4 @@
-{ config, pkgs, lib, hyprpanelPkg, ... }:
+{ config, pkgs, lib, ... }:
 {
     home.username = "reave";
     home.stateVersion = "25.05";
@@ -12,23 +12,28 @@
 		    pkgs.wget
         	pkgs.htop
 		    pkgs.zoxide
-        	pkgs.obsidian           #Notes
-        	pkgs.zsh	        	#FuckBash
-        	pkgs.oh-my-zsh	    	#ifykyk
-        	pkgs.alacritty		    #Terminal
-		    pkgs.vscode			    #WorkShenanigans
-        	pkgs.firefox			#InternetBrowser
-        	pkgs.rofi-wayland 		#AppLauncher
-        	pkgs.yazi			    #TerminalFileManager
-        	pkgs.xfce.tumbler		#FileManagerThumbnails
-        	pkgs.ffmpegthumbnailer	#VideoThumbnails
-        	pkgs.swww			    #WallpaperDaemon
-        	pkgs.xfce.thunar        #GUIFileManager	
+        	pkgs.obsidian           # Notes
+        	pkgs.zsh	        	# FuckBash
+        	pkgs.oh-my-zsh	    	# ifykyk
+        	pkgs.alacritty		    # Terminal
+		    pkgs.vscode			    # WorkShenanigans
+        	pkgs.firefox			# InternetBrowser
+        	pkgs.rofi-wayland 		# AppLauncher
+        	pkgs.yazi			    # TerminalFileManager
+        	pkgs.xfce.tumbler		# FileManagerThumbnails
+        	pkgs.ffmpegthumbnailer	# VideoThumbnails
+        	pkgs.swww			    # WallpaperDaemon
+        	pkgs.xfce.thunar        # GUIFileManager	
             # hyperpanel deps
             pkgs.adwaita-icon-theme
     ];
 
+
     programs = {
+        zen-browser = {
+            enable = true;
+            # nativeMessagingHosts = [pkgs.firefoxpwa];
+        };
         git = {
             enable = true;
             userName = "rhosmans";
