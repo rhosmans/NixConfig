@@ -89,7 +89,7 @@
                     opacity = 0.6;
                     blur = true;
                 };
-                font.size = 15;
+                font.size = 20;
                 selection.save_to_clipboard = true;
                 cursor.thickness = 0.20;
                 cursor.unfocused_hollow = false;
