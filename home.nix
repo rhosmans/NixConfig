@@ -29,6 +29,14 @@
     ];
 
     programs = {
+        git = {
+            enable = true;
+            userName = "rhosmans";
+            userEmail = "rhosmans@gmail.com";
+            extraConfig = {
+                init.defaultBranch = "main";
+            };
+        };
         zsh = {
             enable = true;
             enableCompletion = true;
@@ -60,17 +68,6 @@
         };
         hyprpanel = {
             enable = true;
-            # hyprland.enable = true;
-            # hyprland.enable = true;
-            # layout = {
-            #     "bar.layouts" = {
-            #         "0" = {
-            #         left = [ "dashboard" "workspaces" ];
-            #         middle = [ "media" ];
-            #         right = [ "volume" "systray" "notifications" ];
-            #         };
-            #     };
-            # };
             settings = {
                 bar.launcher.autoDetectIcon = true;
                 bar.workspaces.show_icons = true;

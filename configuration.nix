@@ -112,11 +112,13 @@
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
-  programs.hyprland = {
-    enable = true;
-   	  xwayland.enable = true;
-    };
+    programs.hyprland = {
+      enable = true;
+        xwayland.enable = true;
+      };
+
     programs.zsh.enable = true;
+    
     xdg.portal = {
       enable = true;
       extraPortals = [
