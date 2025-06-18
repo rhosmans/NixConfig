@@ -104,20 +104,33 @@
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     #other
+    manix                             # documentation search for nix pkg options
     git
     neovim
     networkmanagerapplet
     power-profiles-daemon
-    manix                             # documentation search for nix pkg options
+    bonsai
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
-    programs.hyprland = {
-      enable = true;
-        xwayland.enable = true;
-      };
 
-    programs.zsh.enable = true;
+
+    programs = {
+      zsh.enable = true;
+      hyprland = {
+        enable = true;
+          xwayland.enable = true;
+        };
+      neovim = {
+        enable = true;
+        vimAlias = true;
+        vimdiffAlias = true;
+        withNodeJs = true; 
+        # plugins = with pkgs.vimPlugins; [
+        #   lazy-nvim
+        # ];
+      };
+    };
     
     xdg.portal = {
       enable = true;
