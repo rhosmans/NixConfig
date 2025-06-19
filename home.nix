@@ -3,6 +3,8 @@
     home.username = "reave";
     home.stateVersion = "25.05";
 
+    
+
     home.packages = [
         	pkgs.pipewire
         	pkgs.meson
@@ -24,6 +26,7 @@
         	pkgs.ffmpegthumbnailer	# VideoThumbnails
         	pkgs.swww			    # WallpaperDaemon
         	pkgs.xfce.thunar        # GUIFileManager	
+            pkgs.rose-pine-hyprcursor
             # hyperpanel deps
             pkgs.adwaita-icon-theme
     ];
@@ -106,7 +109,6 @@
                 ];
             };
         };
-        neovim.enable = true;
         firefox.enable = true;
     };
 
@@ -114,6 +116,8 @@
         source = ./hyprland/hyprland.conf;
         force = true;
     };
+
+    home.file.".icons/rose-pine".source = "${pkgs.rose-pine-hyprcursor}/share/icons/rose-pine";
 
     # home.file."path/to/firefox-default/profile/chrome" = {
     #   source = ./Firefox/;

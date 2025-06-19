@@ -22,3 +22,4 @@
     - Add padding to edge of screen for submenus
 [] greetd
 [] animated wallpaper with swww
+[] thunar
