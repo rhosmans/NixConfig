@@ -13,6 +13,7 @@
             wget
             htop
             zoxide
+            nwg-look            # GTK-Theming
             obsidian            # Notes
             zsh	        	    # FuckBash
             oh-my-zsh	    	# ifykyk

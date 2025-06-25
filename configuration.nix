@@ -93,11 +93,10 @@
     libgtop
     bluez                             # bluetooth 
     wl-clipboard
-    cliphist
+    clipse
     upower
     gvfs
     gtksourceview3
-    upower
     #hyprland deps
     xdg-desktop-portal
     xdg-desktop-portal-gtk
