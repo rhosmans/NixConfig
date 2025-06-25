@@ -111,6 +111,8 @@
     networkmanagerapplet
     power-profiles-daemon
     cbonsai
+    feh
+    libjpeg_turbo
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

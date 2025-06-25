@@ -5,31 +5,55 @@
 
     
 
-    home.packages = [
-        	pkgs.pipewire
-        	pkgs.meson
-        	pkgs.ninja
-        	pkgs.dunst
-        	pkgs.libnotify
-		    pkgs.wget
-        	pkgs.htop
-		    pkgs.zoxide
-        	pkgs.obsidian           # Notes
-        	pkgs.zsh	        	# FuckBash
-        	pkgs.oh-my-zsh	    	# ifykyk
-        	pkgs.alacritty		    # Terminal
-		    pkgs.vscode			    # WorkShenanigans
-        	pkgs.firefox			# InternetBrowser
-        	pkgs.rofi-wayland 		# AppLauncher
-        	pkgs.yazi			    # TerminalFileManager
-        	pkgs.xfce.tumbler		# FileManagerThumbnails
-        	pkgs.ffmpegthumbnailer	# VideoThumbnails
-        	pkgs.swww			    # WallpaperDaemon
-        	pkgs.xfce.thunar        # GUIFileManager	
-            pkgs.rose-pine-hyprcursor
+    home.packages = with pkgs; [
+        	pipewire
+        	meson
+        	ninja
+        	dunst
+        	libnotify
+		    wget
+        	htop
+		    zoxide
+        	obsidian            # Notes
+        	zsh	        	    # FuckBash
+        	oh-my-zsh	    	# ifykyk
+        	alacritty		    # Terminal
+		    vscode			    # WorkShenanigans
+        	firefox			    # InternetBrowser
+        	rofi-wayland 		# AppLauncher
+        	yazi			    # TerminalFileManager
+        	xfce.tumbler		# FileManagerThumbnails
+        	ffmpegthumbnailer	# VideoThumbnails
+        	swww			    # WallpaperDaemon
+        	xfce.thunar         # GUIFileManager	
+            rose-pine-hyprcursor
+            calcure
+            slack
+            jq
+            (pkgs.writeShellApplication {
+                name = "link-handler";
+                runtimeInputs = [ jq hyprland ];
+                text = builtins.readFile ../scripts/follow-link.sh;
+            })
             # hyperpanel deps
-            pkgs.adwaita-icon-theme
+            adwaita-icon-theme
     ];
+
+    xdg.mimeApps = {
+        enable = true;
+        defaultApplications = {
+            "x-scheme-handler/http" = "link-handler.desktop";
+            "x-scheme-handler/https" = "link-handler.desktop";
+        };
+    };
+
+    xdg.desktopEntries."link-handler" = {
+        name = "Link Handler";
+        exec = "link-handler %u";
+        mimeType = [ "x-scheme-handler/http" "x-scheme-handler/https" ];
+        terminal = false;
+        type = "Application";
+    };
 
 
     programs = {
@@ -91,7 +115,7 @@
             enable = true;
             settings = {
                 window = {
-                    opacity = 0.6;
+                    opacity = 0.8;
                     blur = true;
                 };
                 font.size = 20;
@@ -118,9 +142,4 @@
     };
 
     home.file.".icons/rose-pine".source = "${pkgs.rose-pine-hyprcursor}/share/icons/rose-pine";
-
-    # home.file."path/to/firefox-default/profile/chrome" = {
-    #   source = ./Firefox/;
-    #   force = true;     
-    # };
 }

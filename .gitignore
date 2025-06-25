@@ -5,4 +5,7 @@
 /secrets.env
 /*.swp
 
-result
+result/
+secrets/
+
+
