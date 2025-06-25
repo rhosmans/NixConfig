@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, followLink, ... }:
 {
     home.username = "reave";
     home.stateVersion = "25.05";
@@ -30,11 +30,7 @@
             calcure
             slack
             jq
-            (pkgs.writeShellApplication {
-                name = "link-handler";
-                runtimeInputs = [ jq hyprland ];
-                text = builtins.readFile ../scripts/follow-link.sh;
-            })
+            followLink
             # hyperpanel deps
             adwaita-icon-theme
     ];

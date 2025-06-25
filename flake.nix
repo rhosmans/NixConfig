@@ -33,6 +33,11 @@
       inherit system;
       overlays = [ hyprpanel.overlay ];
     };
+    followLink = pkgs.writeShellApplication {
+        name = "link-handler";
+        runtimeInputs = [ pkgs.jq pkgs.hyprland ];
+        text = builtins.readFile ./scripts/follow-link.sh;
+    };
   in {
     nixosConfigurations.highpointe = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -48,7 +53,10 @@
                 inputs.zen-browser.homeModules.default
             ];
             
-            home-manager.users.reave = import ./home.nix;
+            home-manager.users.reave = {
+              _module.args.followLink = followLink;
+              imports = [ ./home.nix ];
+            };
         }
       ];
     };
