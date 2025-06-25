@@ -35,6 +35,20 @@
             adwaita-icon-theme
     ];
 
+      gtk = {
+        enable = true;
+        theme = {
+        name = "Adwaita-dark";
+        package = pkgs.gnome-themes-extra;
+        };
+            gtk3.extraConfig = {
+            gtk-application-prefer-dark-theme = true;
+        };
+         gtk4.extraConfig = {
+            gtk-application-prefer-dark-theme = true;
+        };
+    };
+
     xdg.mimeApps = {
         enable = true;
         defaultApplications = {
