@@ -17,7 +17,6 @@
             oh-my-zsh	    	# ifykyk
             alacritty		    # Terminal
             vscode			    # WorkShenanigans
-            firefox			    # InternetBrowser
             rofi-wayland 		# AppLauncher
             yazi			    # TerminalFileManager
             xfce.tumbler		# FileManagerThumbnails
@@ -80,7 +79,6 @@
         };
         zen-browser = {
             enable = true;
-            # nativeMessagingHosts = [pkgs.firefoxpwa];
         };
         git = {
             enable = true;
