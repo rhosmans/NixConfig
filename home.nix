@@ -3,8 +3,15 @@
     home.username = "reave";
     home.stateVersion = "25.05";
 
-    
+    programs.neovim = {
+        enable = true;
+        package = pkgs.neovim;
+        viAlias = true;
+        vimAlias = true;
+    };
 
+    home.file.".config/nvim".source = ./nvim;
+    
     home.packages = with pkgs; [
         	pipewire
         	meson
@@ -33,6 +40,15 @@
             followLink
             # hyperpanel deps
             adwaita-icon-theme
+            # lazyVim deps
+            ripgrep
+            fd
+            gcc
+            unzip
+            lazygit
+            tree-sitter
+            nodejs
+            python3
     ];
 
       gtk = {

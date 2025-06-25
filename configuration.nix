@@ -107,7 +107,6 @@
     #other
     manix                             # documentation search for nix pkg options
     git
-    vim
     networkmanagerapplet
     power-profiles-daemon
     cbonsai
