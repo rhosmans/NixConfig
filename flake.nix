@@ -55,6 +55,7 @@
             
             home-manager.users.reave = {
               _module.args.followLink = followLink;
+              _module.args.nvim = ./nvim;
               imports = [ ./home.nix ];
             };
         }

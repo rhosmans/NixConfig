@@ -1,4 +1,4 @@
-{ config, pkgs, lib, followLink, ... }:
+{ config, pkgs, lib, followLink, nvim, ... }:
 {
     home.username = "reave";
     home.stateVersion = "25.05";
@@ -10,7 +10,7 @@
         vimAlias = true;
     };
 
-    home.file.".config/nvim".source = ./nvim;
+    home.file.".config/nvim".source = nvim;
     
     home.packages = with pkgs; [
         	pipewire
@@ -80,7 +80,6 @@
         terminal = false;
         type = "Application";
     };
-
 
     programs = {
         zen-browser = {
