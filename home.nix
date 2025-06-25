@@ -1,4 +1,5 @@
 { config, pkgs, lib, followLink, nvim, ... }:
+
 {
     home.username = "reave";
     home.stateVersion = "25.05";
