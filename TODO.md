@@ -7,7 +7,7 @@
 [] cliphist config
 [] wl-clipboard config
 [] install waybar
-[] Music Player (<https://www.reddit.com/r/unixporn/comments/18joodq/wayfire_nord_theme_eww_waybar_workflow_video_link/>)
+[] Music Player (<https://www.reddit.com/r/unixporn/comments/18joodq/wayfire_nord_theme_eww_waybar_workflow_video_link/>) (Xava Audio Visualizer);
 
 ## Style
 
