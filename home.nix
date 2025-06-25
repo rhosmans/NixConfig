@@ -13,7 +13,6 @@
             wget
             htop
             zoxide
-            nwg-look            # GTK-Theming
             obsidian            # Notes
             zsh	        	    # FuckBash
             oh-my-zsh	    	# ifykyk
@@ -31,7 +30,7 @@
             jq
             followLink
             # hyperpanel deps
-            adwaita-icon-theme
+                # adwaita-icon-theme
             # lazyVim deps
             ripgrep
             fd
@@ -43,16 +42,17 @@
             python3
     ];
 
-      gtk = {
+    gtk = {
         enable = true;
+        # font.name = ""
         theme = {
-        name = "Adwaita-dark";
-        package = pkgs.gnome-themes-extra;
+            name = "tokyonight";
+            package = pkgs.tokyonight-gtk-theme;
         };
-            gtk3.extraConfig = {
+        gtk3.extraConfig = {
             gtk-application-prefer-dark-theme = true;
         };
-         gtk4.extraConfig = {
+        gtk4.extraConfig = {
             gtk-application-prefer-dark-theme = true;
         };
     };
