@@ -2,37 +2,28 @@
 {
     home.username = "reave";
     home.stateVersion = "25.05";
-
-    programs.neovim = {
-        enable = true;
-        package = pkgs.neovim;
-        viAlias = true;
-        vimAlias = true;
-    };
-
-    home.file.".config/nvim".source = nvim;
-    
+      
     home.packages = with pkgs; [
-        	pipewire
-        	meson
-        	ninja
-        	dunst
-        	libnotify
-		    wget
-        	htop
-		    zoxide
-        	obsidian            # Notes
-        	zsh	        	    # FuckBash
-        	oh-my-zsh	    	# ifykyk
-        	alacritty		    # Terminal
-		    vscode			    # WorkShenanigans
-        	firefox			    # InternetBrowser
-        	rofi-wayland 		# AppLauncher
-        	yazi			    # TerminalFileManager
-        	xfce.tumbler		# FileManagerThumbnails
-        	ffmpegthumbnailer	# VideoThumbnails
-        	swww			    # WallpaperDaemon
-        	xfce.thunar         # GUIFileManager	
+            pipewire
+            meson
+            ninja
+            dunst
+            libnotify
+            wget
+            htop
+            zoxide
+            obsidian            # Notes
+            zsh	        	    # FuckBash
+            oh-my-zsh	    	# ifykyk
+            alacritty		    # Terminal
+            vscode			    # WorkShenanigans
+            firefox			    # InternetBrowser
+            rofi-wayland 		# AppLauncher
+            yazi			    # TerminalFileManager
+            xfce.tumbler		# FileManagerThumbnails
+            ffmpegthumbnailer	# VideoThumbnails
+            swww			    # WallpaperDaemon
+            xfce.thunar         # GUIFileManager	
             rose-pine-hyprcursor
             calcure
             slack
@@ -82,6 +73,11 @@
     };
 
     programs = {
+        neovim = {
+            enable = true;
+            viAlias = true;
+            vimAlias = true;
+        };
         zen-browser = {
             enable = true;
             # nativeMessagingHosts = [pkgs.firefoxpwa];
@@ -123,19 +119,19 @@
                 ];
             };
         };
-        hyprpanel = {
-            enable = true;
-            settings = {
-                bar.launcher.autoDetectIcon = true;
-                bar.workspaces.show_icons = true;
-                menus.clock = {
-                    time = {
-                        hideSeconds = true;
-                    };
-                };
-                theme.bar.transparent = true;
-            };
-        };
+        # hyprpanel = {
+        #     enable = true;
+        #     settings = {
+        #         bar.launcher.autoDetectIcon = true;
+        #         bar.workspaces.show_icons = true;
+        #         menus.clock = {
+        #             time = {
+        #                 hideSeconds = true;
+        #             };
+        #         };
+        #         theme.bar.transparent = true;
+        #     };
+        # };
         alacritty = {
             enable = true;
             settings = {
@@ -158,8 +154,10 @@
                 ];
             };
         };
-        firefox.enable = true;
     };
+
+    home.file.".config/nvim".source = nvim;
+
 
     home.file."/home/reave/.config/hypr/hyprland.conf" = {
         source = ./hyprland/hyprland.conf;

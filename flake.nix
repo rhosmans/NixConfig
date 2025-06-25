@@ -31,7 +31,7 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
-      overlays = [ hyprpanel.overlay ];
+      # overlays = [ hyprpanel.overlay ];
     };
     followLink = pkgs.writeShellApplication {
         name = "link-handler";
@@ -49,13 +49,15 @@
             home-manager.useUserPackages = true;
 
             home-manager.sharedModules = [
-                inputs.hyprpanel.homeManagerModules.hyprpanel
+                # inputs.hyprpanel.homeManagerModules.hyprpanel
                 inputs.zen-browser.homeModules.default
             ];
             
             home-manager.users.reave = {
-              _module.args.followLink = followLink;
-              _module.args.nvim = ./nvim;
+            _module.args = {
+              followLink = followLink;
+              nvim = ./configs/nvim;
+            };
               imports = [ ./home.nix ];
             };
         }
