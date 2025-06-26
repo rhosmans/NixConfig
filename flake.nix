@@ -42,11 +42,10 @@
         runtimeInputs = [ pkgs.jq pkgs.hyprland ];
         text = builtins.readFile ./scripts/follow-link.sh;
     };
-    nordAltTheme = builtins.path {
-      path = ./themes/nord-alt.yaml;
-      name = "nord-alt";
+    nordAltTheme = pkgs.writeTextFile {
+      name = "nord-alt.yaml";
+      text = builtins.readFile (self + "/themes/nord-alt.yaml");
     };
-
   in {
     nixosConfigurations.highpointe = nixpkgs.lib.nixosSystem {
       inherit system;

@@ -68,7 +68,8 @@
 
     stylix = {
         enable = true;
-        base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+        base16Scheme = nordAltTheme;
+        # base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
         fonts = {
             serif = {
                 # package = pkgs.nerd-fonts.mononoki;
