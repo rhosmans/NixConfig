@@ -69,31 +69,55 @@
     stylix = {
         enable = true;
         base16Scheme = "${./themes/nord-alt.yaml}";
+        polarity = "dark";
+        # overlays.enable = true;
+        targets.alacritty.enable = false;
+        opacity = {
+            terminal = 0.9;
+            desktop = 0.9;
+        }; 
         fonts = {
+            sizes = {
+                applications = 16;
+                terminal = 16;
+                popups = 20;
+                desktop = 12;
+            };
             serif = {
                 # package = pkgs.nerd-fonts.mononoki;
                 # name = "Mononoki";
                 package = pkgs.nerd-fonts.overpass;
-                name = "Overpass Nerd Font";
+                name = "Overpass";
             };
-
             sansSerif = {
                 package = pkgs.nerd-fonts.overpass;
-                name = "Overpass Nerd Font";
+                name = "Overpass";
             };
-
             monospace = {
-                package = pkgs.nerd-fonts.caskaydia-mono;
-                name = "CaskaydiaMono Nerd Font Mono";
+                package = pkgs.nerd-fonts.blex-mono;
+                name = "BlexMono";
             };
-
             emoji = {
                 package = pkgs.noto-fonts-emoji;
                 name = "Noto Color Emoji";
             };
         };
+
     };
     
+    gtk = {
+        enable = true;
+        iconTheme = {
+            name = "Nordic-darker";
+            package = pkgs.nordic;
+        };
+        gtk3.extraConfig = {
+            gtk-application-prefer-dark-theme = true;
+        };
+        gtk4.extraConfig = {
+            gtk-application-prefer-dark-theme = true;
+        };
+    };
 
     programs = {
         neovim = {
@@ -144,7 +168,36 @@
         alacritty = {
             enable = true;
             settings = {
+                colors = {
+                    primary = {
+                        # background = "#2E3440";
+                        foreground = "#D8DEE9";
+                        background = "#1E2129";
+                        # foreground = "#2E3440";
+                    };
+                    normal = {
+                        black   = "#3B4252";
+                        red     = "#BF616A";
+                        green   = "#A3BE8C";
+                        yellow  = "#EBCB8B";
+                        blue    = "#81A1C1";
+                        magenta = "#B48EAD";
+                        cyan    = "#88C0D0";
+                        white   = "#E5E9F0";
+                    };
+                    bright = {
+                        black   = "#4C566A";
+                        red     = "#BF616A";
+                        green   = "#A3BE8C";
+                        yellow  = "#EBCB8B";
+                        blue    = "#81A1C1";
+                        magenta = "#B48EAD";
+                        cyan    = "#8FBCBB";
+                        white   = "#ECEFF4";
+                    };
+                };
                 window = {
+                    opacity = 0.9;
                     blur = true;
                     dynamic_padding = true;
                     padding = {
@@ -165,6 +218,7 @@
                         family = "CaskaydiaMono Nerd Font Mono";
                         style = "Italic";
                     };
+                    size = 16;
                 };
                 selection.save_to_clipboard = false;
                 cursor.thickness = 0.20;

@@ -119,6 +119,8 @@
         nerd-fonts.overpass
         nerd-fonts.mononoki
         nerd-fonts.caskaydia-mono
+        nerd-fonts.blex-mono
+        nerd-fonts.liberation
     ];
 
   # Some programs need SUID wrappers, can be configured further or are
