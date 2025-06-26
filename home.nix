@@ -1,4 +1,4 @@
-{ config, pkgs, lib, followLink, nvim, nordAltPath, ... }:
+{ config, pkgs, lib, followLink, nvim, ... }:
 
 {
     home.username = "reave";
@@ -68,8 +68,7 @@
 
     stylix = {
         enable = true;
-        base16Scheme = nordAltPath;
-        # base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+        base16Scheme = "${./themes/nord-alt.yaml}";
         fonts = {
             serif = {
                 # package = pkgs.nerd-fonts.mononoki;
