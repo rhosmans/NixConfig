@@ -114,9 +114,14 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  # fonts
+    fonts.packages = with pkgs; [
+        nerd-fonts.overpass
+        nerd-fonts.mononoki
+        nerd-fonts.caskaydia-mono
+    ];
+
   # Some programs need SUID wrappers, can be configured further or are
-
-
     programs = {      
       zsh.enable = true;
       hyprland = {

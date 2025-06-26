@@ -44,3 +44,7 @@ gtk = {
     
   };
 ```
+
+### Get Currently Installed Icon Theme Names
+
+`ls $(nix eval --raw nixpkgs#zafiro-icons)/share/icons`

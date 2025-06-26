@@ -24,13 +24,10 @@
             ffmpegthumbnailer	# VideoThumbnails
             swww			    # WallpaperDaemon
             xfce.thunar         # GUIFileManager	
-            rose-pine-hyprcursor
             calcure
             slack
             jq
             followLink
-            # hyperpanel deps
-                # adwaita-icon-theme
             # lazyVim deps
             ripgrep
             fd
@@ -40,14 +37,24 @@
             tree-sitter
             nodejs
             python3
+            # rice
+            rose-pine-hyprcursor
+            tokyonight-gtk-theme
+            zafiro-icons
+            nordic
+            yaziPlugins.nord
     ];
 
     gtk = {
         enable = true;
-        # font.name = ""
+        font.name = "Overpass Nerd Font";
         theme = {
-            name = "tokyonight";
+            name = "Tokyonight-Dark";
             package = pkgs.tokyonight-gtk-theme;
+        };
+        iconTheme = {
+            name = "Nordic-darker";
+            package = pkgs.nordic;
         };
         gtk3.extraConfig = {
             gtk-application-prefer-dark-theme = true;
@@ -139,8 +146,22 @@
                     opacity = 0.8;
                     blur = true;
                 };
-                font.size = 20;
-                selection.save_to_clipboard = true;
+                font = {
+                    normal = {
+                        family = "CaskaydiaMono Nerd Font Mono";
+                        style = "Regular";
+                    };
+                    bold = {
+                        family = "CaskaydiaMono Nerd Font Mono";
+                        style = "Bold";
+                    };
+                    italic = {
+                        family = "CaskaydiaMono Nerd Font Mono";
+                        style = "Italic";
+                    };
+                    size = 16;
+                };
+                selection.save_to_clipboard = false;
                 cursor.thickness = 0.20;
                 cursor.unfocused_hollow = false;
                 cursor.style.shape = "Beam";
