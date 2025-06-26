@@ -44,8 +44,10 @@
     };
     nordAltTheme = pkgs.writeTextFile {
       name = "nord-alt.yaml";
+      destination = "/themes/nord-alt.yaml";
       text = builtins.readFile (self + "/themes/nord-alt.yaml");
     };
+    nordAltPath = self + "./themes/nord-alt.yaml";
   in {
     nixosConfigurations.highpointe = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -65,7 +67,7 @@
             home-manager.users.reave = {
             _module.args = {
               followLink = followLink;
-              nordAltTheme = nordAltTheme;
+              nordAltPath = nordAltPath;
               nvim = ./configs/nvim;
             };
               imports = [ ./home.nix ];

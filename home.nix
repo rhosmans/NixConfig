@@ -1,4 +1,4 @@
-{ config, pkgs, lib, followLink, nvim, nordAltTheme, ... }:
+{ config, pkgs, lib, followLink, nvim, nordAltPath, ... }:
 
 {
     home.username = "reave";
@@ -68,7 +68,7 @@
 
     stylix = {
         enable = true;
-        base16Scheme = nordAltTheme;
+        base16Scheme = nordAltPath;
         # base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
         fonts = {
             serif = {
