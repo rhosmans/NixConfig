@@ -13,6 +13,9 @@
 - `nix-collect-garbage -d` to clean builds from FS
 - `sudo nixos-rebuild boot --flake /etc/nixos#highpointe` to rebuild and update grub menu to remove old options
 
+- `ls $(nix eval --raw nixpkgs#<package-name>)/share` browse files included in nix.pkgs.
+  - ex. `ls $(nix eval --raw nixpkgs#zafiro-icons)/share/icons` to get icon theme names
+
 ## Reference declarations
 
 ### GTK
@@ -44,7 +47,3 @@ gtk = {
     
   };
 ```
-
-### Get Currently Installed Icon Theme Names
-
-`ls $(nix eval --raw nixpkgs#zafiro-icons)/share/icons`
