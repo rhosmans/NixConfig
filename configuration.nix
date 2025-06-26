@@ -92,7 +92,7 @@
     wireplumber
     libgtop
     bluez                             # bluetooth 
-    wl-clipboard                      #adds wl-copy and wl-paste commands to cli
+    wl-clipboard                      # adds wl-copy and wl-paste commands to cli
     clipse
     upower
     gvfs
@@ -129,6 +129,11 @@
           # xwayland.enable = true;
         };
     };
+
+    stylix = {
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+    };
+
     
     xdg.portal = {
       enable = true;

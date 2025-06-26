@@ -25,9 +25,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.hyprlang.follows = "hyprland/hyprlang";
     };
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, hyprpanel, swww, zen-browser, ... }: let
+  outputs = inputs@{ self, nixpkgs, home-manager, hyprpanel, swww, zen-browser, stylix, ... }: let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
@@ -38,11 +42,17 @@
         runtimeInputs = [ pkgs.jq pkgs.hyprland ];
         text = builtins.readFile ./scripts/follow-link.sh;
     };
+    nordAltTheme = builtins.path {
+      path = ./themes/nord-alt.yaml;
+      name = "nord-alt";
+    };
+
   in {
     nixosConfigurations.highpointe = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
         ./configuration.nix
+        stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
         {
             home-manager.useGlobalPkgs = true;
@@ -56,6 +66,7 @@
             home-manager.users.reave = {
             _module.args = {
               followLink = followLink;
+              nordAltTheme = nordAltTheme;
               nvim = ./configs/nvim;
             };
               imports = [ ./home.nix ];

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, followLink, nvim, ... }:
+{ config, pkgs, lib, followLink, nvim, nordAltTheme, ... }:
 
 {
     home.username = "reave";
@@ -50,25 +50,6 @@
             kdePackages.kio-extras  # extra protocols support (sftp, fish and more)
     ];
 
-    gtk = {
-        enable = true;
-        font.name = "Overpass Nerd Font";
-        theme = {
-            name = "Tokyonight-Dark";
-            package = pkgs.tokyonight-gtk-theme;
-        };
-        iconTheme = {
-            name = "Nordic-darker";
-            package = pkgs.nordic;
-        };
-        gtk3.extraConfig = {
-            gtk-application-prefer-dark-theme = true;
-        };
-        gtk4.extraConfig = {
-            gtk-application-prefer-dark-theme = true;
-        };
-    };
-
     xdg.mimeApps = {
         enable = true;
         defaultApplications = {
@@ -84,6 +65,35 @@
         terminal = false;
         type = "Application";
     };
+
+    stylix = {
+        enable = true;
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+        fonts = {
+            serif = {
+                # package = pkgs.nerd-fonts.mononoki;
+                # name = "Mononoki";
+                package = pkgs.nerd-fonts.overpass;
+                name = "Overpass Nerd Font";
+            };
+
+            sansSerif = {
+                package = pkgs.nerd-fonts.overpass;
+                name = "Overpass Nerd Font";
+            };
+
+            monospace = {
+                package = pkgs.nerd-fonts.caskaydia-mono;
+                name = "CaskaydiaMono Nerd Font Mono";
+            };
+
+            emoji = {
+                package = pkgs.noto-fonts-emoji;
+                name = "Noto Color Emoji";
+            };
+        };
+    };
+    
 
     programs = {
         neovim = {
@@ -131,52 +141,10 @@
                 ];
             };
         };
-        # hyprpanel = {
-        #     enable = true;
-        #     settings = {
-        #         bar.launcher.autoDetectIcon = true;
-        #         bar.workspaces.show_icons = true;
-        #         menus.clock = {
-        #             time = {
-        #                 hideSeconds = true;
-        #             };
-        #         };
-        #         theme.bar.transparent = true;
-        #     };
-        # };
         alacritty = {
             enable = true;
             settings = {
-                colors = {
-                    primary = {
-                        # background = "#2E3440";
-                        foreground = "#D8DEE9";
-                        background = "#1E2129";
-                        # foreground = "#2E3440";
-                    };
-                    normal = {
-                        black   = "#3B4252";
-                        red     = "#BF616A";
-                        green   = "#A3BE8C";
-                        yellow  = "#EBCB8B";
-                        blue    = "#81A1C1";
-                        magenta = "#B48EAD";
-                        cyan    = "#88C0D0";
-                        white   = "#E5E9F0";
-                    };
-                    bright = {
-                        black   = "#4C566A";
-                        red     = "#BF616A";
-                        green   = "#A3BE8C";
-                        yellow  = "#EBCB8B";
-                        blue    = "#81A1C1";
-                        magenta = "#B48EAD";
-                        cyan    = "#8FBCBB";
-                        white   = "#ECEFF4";
-                    };
-                };
                 window = {
-                    opacity = 0.9;
                     blur = true;
                     dynamic_padding = true;
                     padding = {
@@ -197,7 +165,6 @@
                         family = "CaskaydiaMono Nerd Font Mono";
                         style = "Italic";
                     };
-                    size = 16;
                 };
                 selection.save_to_clipboard = false;
                 cursor.thickness = 0.20;

@@ -1,0 +1,18 @@
+scheme: "Nord-Alternative"
+author: "you"
+base00: "1E2129"  # background
+base01: "3B4252"  # lighter background / selection
+base02: "4C566A"  # comments / invisibles
+base03: "D8DEE9"  # dark foreground
+base04: "E5E9F0"  # light foreground
+base05: "ECEFF4"  # foreground (default)
+base06: "ECEFF4"  # light background (optional)
+base07: "FFFFFF"  # white
+base08: "BF616A"  # red
+base09: "EBCB8B"  # orange/yellow
+base0A: "EBCB8B"  # yellow
+base0B: "A3BE8C"  # green
+base0C: "88C0D0"  # cyan
+base0D: "81A1C1"  # blue
+base0E: "B48EAD"  # magenta
+base0F: "5E81AC"  # brown (optional)
