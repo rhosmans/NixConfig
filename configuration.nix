@@ -92,7 +92,7 @@
     wireplumber
     libgtop
     bluez                             # bluetooth 
-    wl-clipboard
+    wl-clipboard                      #adds wl-copy and wl-paste commands to cli
     clipse
     upower
     gvfs
