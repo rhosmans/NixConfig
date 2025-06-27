@@ -84,10 +84,10 @@
                 desktop = 12;
             };
             serif = {
-                # package = pkgs.nerd-fonts.mononoki;
-                # name = "Mononoki";
-                package = pkgs.nerd-fonts.overpass;
-                name = "Overpass Nerd Font";
+                package = pkgs.nerd-fonts.mononoki;
+                name = "Mononoki Nerd Font";
+                # package = pkgs.nerd-fonts.overpass;
+                # name = "Overpass Nerd Font";
             };
             sansSerif = {
                 package = pkgs.nerd-fonts.overpass;
