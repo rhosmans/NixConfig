@@ -19,7 +19,6 @@
             alacritty		        # Terminal
             vscode			        # WorkShenanigans
             rofi-wayland 		    # AppLauncher
-            yazi			        # TerminalFileManager
             xfce.tumbler		    # FileManagerThumbnails
             ffmpegthumbnailer	    # VideoThumbnails
             swww			        # WallpaperDaemon
@@ -41,13 +40,13 @@
             tokyonight-gtk-theme
             zafiro-icons
             nordic
-            yaziPlugins.nord
             alacritty-theme
             # Dolphin deps
             kdePackages.dolphin     # GUIFileManager
             kdePackages.qtsvg       # Dolphin svgIcons
             kdePackages.kio-fuse    # to mount remote filesystems via FUSE
             kdePackages.kio-extras  # extra protocols support (sftp, fish and more)
+            # yaziPlugins.nord
     ];
 
     xdg.mimeApps = {
@@ -116,6 +115,15 @@
     };
 
     programs = {
+        rofi = {
+            enable = true;
+            package = pkgs.rofi-wayland;
+            extraConfig = {
+                modi = "window,run,drun,combi";
+                combi-modi = "drun,run";
+                # font = "Overpass Nerd Font";
+            };
+        };
         neovim = {
             enable = true;
             viAlias = true;

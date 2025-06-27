@@ -110,6 +110,7 @@
     cbonsai
     feh
     libjpeg_turbo
+    superfile			                    # TerminalFileManager
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -132,7 +133,7 @@
       hyprland = {
         enable = true;
           # xwayland.enable = true;
-        };
+      };
     };
 
     stylix = {
