@@ -71,7 +71,14 @@
         base16Scheme = "${./themes/nord-alt.yaml}";
         polarity = "dark";
         # overlays.enable = true;
-        # targets.alacritty.enable = false;
+        targets = {
+            kde.enable = true;
+            rofi.enable = true;
+        };
+        # cursor = {
+        #     package = pkgs.rose-pine-hyprcursor;
+        #     name = "rose-pine-hyprcursor";
+        # };
         opacity = {
             terminal = 0.9;
             desktop = 0.9;
@@ -102,7 +109,10 @@
                 name = "Noto Color Emoji";
             };
         };
-
+        # icons = {
+        #     name = "Nordic-darker";
+        #     package = pkgs.nordic;
+        # };
     };
 
     programs = {
