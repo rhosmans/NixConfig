@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -115,13 +115,16 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # fonts
-    fonts.packages = with pkgs; [
-        nerd-fonts.overpass
-        nerd-fonts.mononoki
-        nerd-fonts.caskaydia-mono
-        nerd-fonts.blex-mono
-        nerd-fonts.liberation
-    ];
+    # fonts.packages = with pkgs; [
+    #     nerd-fonts.overpass
+    #     nerd-fonts.mononoki
+    #     nerd-fonts.caskaydia-mono
+    #     nerd-fonts.blex-mono
+    #     nerd-fonts.liberation
+    # ];
+
+    # All Nerd Font packages
+    fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   # Some programs need SUID wrappers, can be configured further or are
     programs = {      

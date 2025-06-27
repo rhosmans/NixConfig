@@ -71,7 +71,7 @@
         base16Scheme = "${./themes/nord-alt.yaml}";
         polarity = "dark";
         # overlays.enable = true;
-        targets.alacritty.enable = false;
+        # targets.alacritty.enable = false;
         opacity = {
             terminal = 0.9;
             desktop = 0.9;
@@ -87,15 +87,15 @@
                 # package = pkgs.nerd-fonts.mononoki;
                 # name = "Mononoki";
                 package = pkgs.nerd-fonts.overpass;
-                name = "Overpass";
+                name = "Overpass Nerd Font";
             };
             sansSerif = {
                 package = pkgs.nerd-fonts.overpass;
-                name = "Overpass";
+                name = "Overpass Nerd Font";
             };
             monospace = {
-                package = pkgs.nerd-fonts.blex-mono;
-                name = "BlexMono";
+                package = pkgs.nerd-fonts.liberation;
+                name = "LiterationMono Nerd Font Mono";
             };
             emoji = {
                 package = pkgs.noto-fonts-emoji;
@@ -168,36 +168,36 @@
         alacritty = {
             enable = true;
             settings = {
-                colors = {
-                    primary = {
-                        # background = "#2E3440";
-                        foreground = "#D8DEE9";
-                        background = "#1E2129";
-                        # foreground = "#2E3440";
-                    };
-                    normal = {
-                        black   = "#3B4252";
-                        red     = "#BF616A";
-                        green   = "#A3BE8C";
-                        yellow  = "#EBCB8B";
-                        blue    = "#81A1C1";
-                        magenta = "#B48EAD";
-                        cyan    = "#88C0D0";
-                        white   = "#E5E9F0";
-                    };
-                    bright = {
-                        black   = "#4C566A";
-                        red     = "#BF616A";
-                        green   = "#A3BE8C";
-                        yellow  = "#EBCB8B";
-                        blue    = "#81A1C1";
-                        magenta = "#B48EAD";
-                        cyan    = "#8FBCBB";
-                        white   = "#ECEFF4";
-                    };
-                };
+                # colors = {
+                #     primary = {
+                #         # background = "#2E3440";
+                #         foreground = "#D8DEE9";
+                #         background = "#1E2129";
+                #         # foreground = "#2E3440";
+                #     };
+                #     normal = {
+                #         black   = "#3B4252";
+                #         red     = "#BF616A";
+                #         green   = "#A3BE8C";
+                #         yellow  = "#EBCB8B";
+                #         blue    = "#81A1C1";
+                #         magenta = "#B48EAD";
+                #         cyan    = "#88C0D0";
+                #         white   = "#E5E9F0";
+                #     };
+                #     bright = {
+                #         black   = "#4C566A";
+                #         red     = "#BF616A";
+                #         green   = "#A3BE8C";
+                #         yellow  = "#EBCB8B";
+                #         blue    = "#81A1C1";
+                #         magenta = "#B48EAD";
+                #         cyan    = "#8FBCBB";
+                #         white   = "#ECEFF4";
+                #     };
+                # };
                 window = {
-                    opacity = 0.9;
+                    # opacity = 0.9;
                     blur = true;
                     dynamic_padding = true;
                     padding = {
@@ -205,21 +205,21 @@
                         y = 2;
                     };
                 };
-                font = {
-                    normal = {
-                        family = "CaskaydiaMono Nerd Font Mono";
-                        style = "Regular";
-                    };
-                    bold = {
-                        family = "CaskaydiaMono Nerd Font Mono";
-                        style = "Bold";
-                    };
-                    italic = {
-                        family = "CaskaydiaMono Nerd Font Mono";
-                        style = "Italic";
-                    };
-                    size = 16;
-                };
+                # font = {
+                #     normal = {
+                #         family = "LiterationMono Nerd Font Mono";
+                #         style = "Regular";
+                #     };
+                #     bold = {
+                #         family = "LiterationMono Nerd Font Mono";
+                #         style = "Bold";
+                #     };
+                #     italic = {
+                #         family = "LiterationMono Nerd Font Mono";
+                #         style = "Italic";
+                #     };
+                #     size = 16;
+                # };
                 selection.save_to_clipboard = false;
                 cursor.thickness = 0.20;
                 cursor.unfocused_hollow = false;
