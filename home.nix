@@ -22,6 +22,7 @@
             xfce.tumbler		    # FileManagerThumbnails
             ffmpegthumbnailer	    # VideoThumbnails
             swww			        # WallpaperDaemon
+            superfile			    # TerminalFileManager
             calcure
             slack
             jq
@@ -115,6 +116,29 @@
     };
 
     programs = {
+        superfile = {
+            enable = true;
+            settings = {
+                transparent_background = true;
+                theme = "nord";
+                editor = "nvim";
+                dir_editor = "";
+                cd_on_quit = true;
+                auto_check_update = false;
+                default_open_file_preview = true;
+                show_image_preview = true;
+                show_panel_footer_info = true;
+                default_directory = "~";
+                file_size_use_si = false;
+                default_sort_type = 0;
+                sort_order_reversed = false;
+                case_sensitive_sort = false;
+                shell_close_on_success = false;
+                debug = false;
+                nerdfont = true;
+                
+            };
+        };
         rofi = {
             enable = true;
             package = pkgs.rofi-wayland;

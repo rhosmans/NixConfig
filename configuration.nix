@@ -110,7 +110,7 @@
     cbonsai
     feh
     libjpeg_turbo
-    superfile			                    # TerminalFileManager
+    tdf
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
