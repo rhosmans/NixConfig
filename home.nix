@@ -136,14 +136,28 @@
                 shell_close_on_success = false;
                 debug = false;
                 nerdfont = true;
-                
+                file_preview_width = 0;
+                sidebar_width = 20;
+                border_top = "─";
+                border_bottom = "─";
+                border_left = "│";
+                border_right = "│";
+                border_top_left = "╭";
+                border_top_right = "╮";
+                border_bottom_left = "╰";
+                border_bottom_right = "╯";
+                border_middle_left = "├";
+                border_middle_right = "┤";
+                metadata = false;
+                enable_md5_checksum = false;
+                code_previewer = "";
             };
         };
         rofi = {
             enable = true;
             package = pkgs.rofi-wayland;
             extraConfig = {
-                modi = "window,run,drun,combi";
+                modi = "window,run,drun,combi,keys";
                 combi-modi = "drun,run";
                 # font = "Overpass Nerd Font";
             };
