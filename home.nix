@@ -42,12 +42,7 @@
             zafiro-icons
             nordic
             alacritty-theme
-            # Dolphin deps
-            kdePackages.dolphin     # GUIFileManager
-            kdePackages.qtsvg       # Dolphin svgIcons
-            kdePackages.kio-fuse    # to mount remote filesystems via FUSE
-            kdePackages.kio-extras  # extra protocols support (sftp, fish and more)
-            # yaziPlugins.nord
+            nemo                    # GUIFileManager
     ];
 
     xdg.mimeApps = {
@@ -72,7 +67,7 @@
         polarity = "dark";
         # overlays.enable = true;
         targets = {
-            kde.enable = true;
+            gtk.enable = true;
             rofi.enable = true;
         };
         # cursor = {
@@ -159,7 +154,7 @@
             extraConfig = {
                 modi = "window,run,drun,combi,keys";
                 combi-modi = "drun,run";
-                # font = "Overpass Nerd Font";
+                font = "Overpass Nerd Font";
             };
         };
         neovim = {
