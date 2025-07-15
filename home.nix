@@ -18,11 +18,12 @@
             oh-my-zsh	    	    # ifykyk
             alacritty		        # Terminal
             vscode			        # WorkShenanigans
-            rofi-wayland 		    # AppLauncher
+            wofi                    # AppLauncher
             xfce.tumbler		    # FileManagerThumbnails
             ffmpegthumbnailer	    # VideoThumbnails
             swww			        # WallpaperDaemon
             superfile			    # TerminalFileManager
+            nemo                    # GUIFileManager
             calcure
             slack
             jq
@@ -42,7 +43,6 @@
             zafiro-icons
             nordic
             alacritty-theme
-            nemo                    # GUIFileManager
     ];
 
     xdg.mimeApps = {
@@ -53,12 +53,32 @@
         };
     };
 
-    xdg.desktopEntries."link-handler" = {
-        name = "Link Handler";
-        exec = "link-handler %u";
-        mimeType = [ "x-scheme-handler/http" "x-scheme-handler/https" ];
-        terminal = false;
-        type = "Application";
+    xdg.desktopEntries = {
+        "link-handler" = {
+            name = "Link Handler";
+            exec = "link-handler %u";
+            mimeType = [ "x-scheme-handler/http" "x-scheme-handler/https" ];
+            terminal = false;
+            type = "Application";
+        };
+
+        "Finder" = {
+            name = "SuperFile";
+            genericName = "Terminal File Manager";
+            exec = "alacritty -e superfile";
+            terminal = false;
+            categories = [ "Utility" "FileManager" ];
+            type = "Application";
+        };
+
+        "nvim" = {
+            name = "LazyVim";
+            genericName = "LazyVim Editor";
+            exec = "alacritty -e vim";
+            terminal = false;
+            categories = [ "TextEditor" ];
+            type = "Application";
+        };
     };
 
     stylix = {
@@ -67,8 +87,8 @@
         polarity = "dark";
         # overlays.enable = true;
         targets = {
+            wofi.enable = false;
             gtk.enable = true;
-            rofi.enable = true;
         };
         # cursor = {
         #     package = pkgs.rose-pine-hyprcursor;
@@ -148,14 +168,33 @@
                 code_previewer = "";
             };
         };
-        rofi = {
+        wofi = {
             enable = true;
-            package = pkgs.rofi-wayland;
-            extraConfig = {
-                modi = "window,run,drun,combi,keys";
-                combi-modi = "drun,run";
-                font = "Overpass Nerd Font";
+            package = pkgs.wofi;
+            settings = {
+                # color = "${./themes/nord-alt.yaml}";
+                font = "LiberationMono Nerd Font Mono 12";
+                term = "alacritty";
+                width = "45%";
+                hide_scroll = true;
             };
+            style = ''
+                #outer-box {
+                }
+
+                #inner-box {
+                    background-color = rgba(#1E2129, 0.8);
+                    border-radius = 10px;
+                }
+                
+                #entry {
+                    background-color: rgba(#1E2129, 0.6);
+                }
+
+                #text {
+                    color: rgba(#FFFFFF, 0.8);
+                }
+            '';
         };
         neovim = {
             enable = true;

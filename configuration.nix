@@ -111,6 +111,7 @@
     feh
     libjpeg_turbo
     tdf
+    vial
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
