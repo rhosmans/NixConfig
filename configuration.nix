@@ -129,7 +129,7 @@
     fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   # Some programs need SUID wrappers, can be configured further or are
-    programs = {      
+    programs = {   
       zsh.enable = true;
       hyprland = {
         enable = true;
